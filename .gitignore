@@ -1,0 +1,16 @@
+# environment and caches
+.venv/
+.cache/
+env.sh
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# downloaded data and run outputs (re-created by the notebook)
+data/
+outputs_v2/
+dry_run_v2/
+notebooks/runs/
+logs/
+outputs/*
+!outputs/sample_questions.csv
