@@ -27,7 +27,15 @@ Datasets: [FloodNet-VQA](https://github.com/BinaLab/FloodNet-Challenge-EARTHVISI
 | Δ vs E2 (Holm-corrected McNemar *p*) | −1.2 (0.25) | **+7.0** (4.8e-10) | **+2.5** (0.012) | **+5.2** (0.036) |
 | AeroVerify, selective: accuracy @ coverage | 82.1 % @ 84 % | 84.0 % @ 83 % | 62.9 % @ 86 % | 58.1 % @ 100 % |
 
-See the paper for per-type results, the risk–coverage comparison against calibrated baselines, ablations, robustness and cost.
+**Highlights**
+
+- **The weights find the unreliable source on their own.** SmolVLM's full-view answers to FloodNet yes/no questions are near chance (49.4%, weight 0.06), while its native-resolution tiles are reliable (85.8%, weight 1.98). Fusion lifts yes/no accuracy from 49.4% to 85.8%, which accounts for most of the +7.0 point gain.
+- **Hallucinated "yes" answers disappear.** On FloodNet "no" questions, SmolVLM's structured prompt says "yes" 21.8% of the time; AeroVerify brings that to 0.0%.
+- **Confidence becomes trustworthy.** Type-conditional calibration fit on DEV cuts expected calibration error on EVAL from 16.4 → 6.3 and 11.6 → 3.6 (FloodNet), and 13.6 → 3.1 and 6.4 → 3.3 (RSVQA-LR).
+- **Better risk–coverage than calibrated alternatives for SmolVLM:** AURC 8.1 vs 10.9 for self-consistency on FloodNet, and 24.4 vs 31.1 for the best alternative on RSVQA-LR.
+- **Honest limits.** For Moondream2 on FloodNet, AeroVerify is statistically tied with its strong single prompt, and RSVQA-LR sits near a resolution ceiling where no method beats the most-common-answer baseline significantly.
+
+All intervals are 95% image-level cluster bootstrap; paired tests use exact McNemar with Holm correction. See the paper for per-type results, ablations, robustness and cost.
 
 ## Repository layout
 
@@ -95,7 +103,7 @@ The datasets are not redistributed here; the notebook downloads them from their 
 
 ## Citation
 
-The paper is under review. A BibTeX entry will be added here on publication.
+Under review at the *IEEE Open Journal of Vehicular Technology*. A BibTeX entry will be added here on publication.
 
 ## Licence
 
