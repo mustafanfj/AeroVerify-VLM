@@ -2,6 +2,14 @@
 
 **A training-free, evidence-grounded framework for reliable visual question answering on UAV imagery with small vision–language models.**
 
+<p>
+<img src="https://img.shields.io/badge/paper-IEEE%20OJVT%20%C2%B7%20under%20review-0B6A66?style=flat-square" alt="paper: IEEE OJVT · under review">
+<img src="https://img.shields.io/badge/datasets-FloodNet--VQA%20%C2%B7%20RSVQA--LR-0B6A66?style=flat-square" alt="datasets: FloodNet-VQA · RSVQA-LR">
+<img src="https://img.shields.io/badge/training-none%20%28frozen%20VLMs%29-0B6A66?style=flat-square" alt="training: none (frozen VLMs)">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0B6A66?style=flat-square" alt="license: MIT"></a>
+<a href="https://mustafanfj.github.io"><img src="https://img.shields.io/badge/author-Mustafa%20Al%20Juboori-17202A?style=flat-square" alt="author: Mustafa Al Juboori"></a>
+</p>
+
 AeroVerify-VLM asks a small VLM the same question through several independent *evidence sources*. It fuses their answers with *reliability weights* estimated on a small development split, and it abstains when the calibrated confidence is low. The model is never fine-tuned.
 
 ![AeroVerify-VLM framework](figures/aeroverify_framework.png)
