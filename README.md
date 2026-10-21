@@ -4,6 +4,8 @@
 
 AeroVerify-VLM asks a small VLM the same question through several independent *evidence sources*. It fuses their answers with *reliability weights* estimated on a small development split, and it abstains when the calibrated confidence is low. The model is never fine-tuned.
 
+![AeroVerify-VLM framework](figures/aeroverify_framework.png)
+
 | Evidence source | What it does |
 |---|---|
 | Full view (E2) | Whole image with a type-specific prompt |
